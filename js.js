@@ -1,19 +1,36 @@
-function makeDiv() {
-  const container = document.getElementById("container");
-  for (let i = 1; i <= 256; i++) {
-    const grid = document.createElement("div");
-    grid.className = "grid";
-    container.appendChild(grid);
+function makeDiv(size) {
+  const board = document.getElementById("board");
+
+  for (let i = 1; i <= size * size; i++) {
+    const square = document.createElement("div");
+    square.className = "square";
+    board.appendChild(square);
   }
+
+  const squareSizePercentage = 100/size;
+  const squares = document.querySelectorAll(".square")
+  squares.forEach((square) => {
+    square.style.flexBasis = `calc(${squareSizePercentage}% - 20px)`;
+  })
 }
 
-makeDiv();
+//const squareSize = 6
+//const size = parseInt(squareSize)
+makeDiv(3)
 
-const grids = document.querySelectorAll(".grid");
 
-grids.forEach((grid) => {
-  grid.addEventListener("mouseover", () => {
+const squares = document.querySelectorAll(".square");
+
+squares.forEach((square) => {
+  square.addEventListener("mouseover", () => {
     console.log("hover triggered")
-    grid.style.backgroundColor = "red";
+    square.style.backgroundColor = "red";
   });
 });
+
+const slider = document.getElementById("slider")
+const sliderOutput = document.getElementById("sliderOutput")
+
+slider.addEventListener("input", function() {
+    sliderOutput.innerHTML = this.value
+}) 
