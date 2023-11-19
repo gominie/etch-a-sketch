@@ -1,0 +1,23 @@
+
+
+body {
+    border: 10px solid yellowgreen;
+    height: 100vh;
+    margin: 0;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    border: 10px solid black;
+    height: 100%;
+}
+
+.grid {
+    background-color: pink;
+    border: 10px solid purple;
+    flex-basis: calc(6.25% - 20px);
+    flex-grow: 0;
+    box-sizing: border-box;
+    margin: 10px;
+}
