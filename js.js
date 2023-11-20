@@ -1,25 +1,24 @@
-function makeDiv(size) {
-  const board = document.getElementById("board");
-
-  for (let i = 1; i <= size * size; i++) {
-    const square = document.createElement("div");
-    square.className = "square";
-    board.appendChild(square);
-  }
-
-  const squareSizePercentage = 100/size;
-  const squares = document.querySelectorAll(".square")
-  squares.forEach((square) => {
-    square.style.flexBasis = `calc(${squareSizePercentage}% - 20px)`;
-  })
+function dynamicDiv(size) {
+  let board = document.getElementById("board");
+  board.innerHTML = "";
+ for (let i = 0; i < size; i++) {
+  let divRow = document.createElement("div");
+  divRow.className = "divRow"
+    for (let j = 0; j < size; j++) {
+     let square = document.createElement("div");
+     square.className = "square";
+     divRow.appendChild(square)
+    }
+  board.appendChild(divRow)
+ } 
 }
 
 //const squareSize = 6
 //const size = parseInt(squareSize)
-makeDiv(3)
+dynamicDiv(4)
 
 
-const squares = document.querySelectorAll(".square");
+ const squares = document.querySelectorAll(".square");
 
 squares.forEach((square) => {
   square.addEventListener("mouseover", () => {
@@ -33,4 +32,6 @@ const sliderOutput = document.getElementById("sliderOutput")
 
 slider.addEventListener("input", function() {
     sliderOutput.innerHTML = this.value
-}) 
+    const size = this.value;
+    dynamicDiv(size)
+})  
