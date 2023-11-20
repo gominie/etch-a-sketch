@@ -7,14 +7,13 @@ body {
 #board {
   display: flex;
   flex-wrap: wrap;
-  border: 10px solid orange;
-  height: 500px;
-  width: 500px;
+  border: 10px solid rgb(222, 248, 221);
+  height: 550px;
+  width: 550px;
   justify-content: center;
 }
 
 .square {
-  background-color: pink;
   border: 2px solid black;
   flex-grow: 1;
 }

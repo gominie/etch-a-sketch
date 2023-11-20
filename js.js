@@ -1,37 +1,38 @@
+let board = document.getElementById("board");
 function dynamicDiv(size) {
-  let board = document.getElementById("board");
   board.innerHTML = "";
- for (let i = 0; i < size; i++) {
-  let divColumn = document.createElement("div");
-  divColumn.className = "divColumn"
+  for (let i = 0; i < size; i++) {
+    let divColumn = document.createElement("div");
+    divColumn.className = "divColumn";
     for (let j = 0; j < size; j++) {
-     let square = document.createElement("div");
-     square.className = "square";
-     divColumn.appendChild(square)
+      let square = document.createElement("div");
+      square.className = "square";
+      divColumn.appendChild(square);
     }
-  board.appendChild(divColumn)
- } 
+    board.appendChild(divColumn);
+  }
 }
 
 //const squareSize = 6
 //const size = parseInt(squareSize)
-dynamicDiv(4)
+dynamicDiv(4);
 
-
- const squares = document.querySelectorAll(".square");
-
-squares.forEach((square) => {
-  square.addEventListener("mouseover", () => {
-    console.log("hover triggered")
-    square.style.backgroundColor = "red";
-  });
+board.addEventListener("mouseover", (event) => {
+  const target = event.target;
+  if (target.classList.contains("square")) {
+    console.log("hover triggered");
+    target.style.backgroundColor = "red";
+  }
 });
 
-const slider = document.getElementById("slider")
-const sliderOutput = document.getElementById("sliderOutput")
+const slider = document.getElementById("slider");
+const sliderOutput = document.getElementById("sliderOutput");
+sliderOutput.innerHTML = `${slider.value} x ${slider.value}`
 
-slider.addEventListener("input", function() {
-    sliderOutput.innerHTML = this.value
-    const size = this.value;
-    dynamicDiv(size)
-})  
+slider.addEventListener("input", function () {
+  sliderOutput.innerHTML = `${this.value} x ${this.value}`;
+  const size = this.value;
+  dynamicDiv(size);
+});
+
+//want to make end slider display differently e.g 48 x 48 instead of just 48 
