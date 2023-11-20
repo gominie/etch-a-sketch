@@ -2,14 +2,14 @@ function dynamicDiv(size) {
   let board = document.getElementById("board");
   board.innerHTML = "";
  for (let i = 0; i < size; i++) {
-  let divRow = document.createElement("div");
-  divRow.className = "divRow"
+  let divColumn = document.createElement("div");
+  divColumn.className = "divColumn"
     for (let j = 0; j < size; j++) {
      let square = document.createElement("div");
      square.className = "square";
-     divRow.appendChild(square)
+     divColumn.appendChild(square)
     }
-  board.appendChild(divRow)
+  board.appendChild(divColumn)
  } 
 }
 
