@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>etch-a-sketch</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="slider.css" />
   </head>
   <body>
-    <div class="content">
-    <div id="board"></div>
-<div class="buttons">
-    <button>Black</button>
-    <button>White</button>
-    <button>Random</button>
-    <button>Reset</button>
-</div>
-<div>
-<input type="range" min="2" max="65" id="slider" value="48">
-<span id="sliderOutput"></span>
-</div>
+    <div id="content">
+      <div id="board"></div>
+      <div id="controls">
+        <div id="frame">
+          <div id="range">
+            <input type="range" min="2" max="65" id="slider" value="35" />
+          </div>
+        </div>
+        <span id="sliderOutput"></span>
+        <button id="reset">
+          <i class="fa-solid fa-power-off" style="color: #ff0000"></i>
+        </button>
+      </div>
     </div>
+    <input type="range" id="range-style" />
     <script src="js.js"></script>
   </body>
 </html>

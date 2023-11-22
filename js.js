@@ -15,13 +15,13 @@ function dynamicDiv(size) {
 
 //const squareSize = 6
 //const size = parseInt(squareSize)
-dynamicDiv(4);
+dynamicDiv(35);
 
 board.addEventListener("mouseover", (event) => {
   const target = event.target;
   if (target.classList.contains("square")) {
     console.log("hover triggered");
-    target.style.backgroundColor = "red";
+    target.style.backgroundColor = "grey";
   }
 });
 
@@ -36,3 +36,12 @@ slider.addEventListener("input", function () {
 });
 
 //want to make end slider display differently e.g 48 x 48 instead of just 48 
+
+
+//event listener for reset button
+const reset = document.getElementById("reset");
+reset.addEventListener("mousedown", () => {
+  console.log("press")
+  const size = slider.value
+  dynamicDiv(size)
+})
