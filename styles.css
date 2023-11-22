@@ -1,23 +1,21 @@
 body {
-  border: 10px solid yellowgreen;
   height: 100vh;
   margin: 0;
-  background-color:#78CCCB;
+  background-color: #78cccb;
 }
-
 
 #board {
   display: flex;
   height: 550px;
   width: 550px;
- 
- order: 1;
-   border: solid rgb(230, 103, 103);
-  border-width: 90px 90px; 
+
+  order: 1;
+  border: solid rgb(230, 103, 103);
+  border-width: 90px 90px;
   background-color: white;
- 
+
   margin: auto;
-  margin-right: 590px ;
+  margin-right: 590px;
 }
 
 .square {
@@ -35,13 +33,11 @@ body {
 
 #content {
   display: flex;
- border-width: 60px 90px;
- align-items: center;
+  border-width: 60px 90px;
+  align-items: center;
   justify-content: space-between;
   height: 100%;
- 
 }
-
 
 #controls {
   display: flex;
@@ -52,8 +48,8 @@ body {
   background-color: rgb(6, 214, 160);
   height: 250px;
   width: 200px;
-border-radius: 1rem;
-gap: 25px;
+  border-radius: 1rem;
+  gap: 25px;
 }
 
 #sliderOutput {
@@ -63,15 +59,14 @@ gap: 25px;
 
 #reset {
   background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
-
 .fa-solid.fa-power-off {
-font-size: 50px;
+  font-size: 50px;
 }

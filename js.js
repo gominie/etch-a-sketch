@@ -21,7 +21,7 @@ board.addEventListener("mouseover", (event) => {
   const target = event.target;
   if (target.classList.contains("square")) {
     console.log("hover triggered");
-    target.style.backgroundColor = "grey";
+    target.style.backgroundColor = "purple";
   }
 });
 
