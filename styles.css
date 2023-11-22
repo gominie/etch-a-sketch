@@ -15,7 +15,7 @@ body {
   background-color: white;
 
   margin: auto;
-  margin-right: 590px;
+  margin-right: 20%;
 }
 
 .square {
@@ -44,7 +44,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 290px;
+  margin-left: 15%;
   background-color: rgb(6, 214, 160);
   height: 250px;
   width: 200px;
