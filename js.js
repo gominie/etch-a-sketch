@@ -21,9 +21,19 @@ board.addEventListener("mouseover", (event) => {
   const target = event.target;
   if (target.classList.contains("square")) {
     console.log("hover triggered");
-    target.style.backgroundColor = "purple";
+    let currentColor = getComputedStyle(target).backgroundColor;
+    let rgbaArray = currentColor.replace(/[^\d,\.]/g, '').split(',');
+console.log(rgbaArray)
+    let alpha = parseFloat(rgbaArray[3]);
+  console.log(alpha)
+    alpha = Math.min(1, alpha + 0.1);
+    rgbaArray.splice(3,1,alpha);
+ console.log(rgbaArray)
+    target.style.backgroundColor = `rgba(${rgbaArray.join()})`;
   }
 });
+
+//rgba.splice(3,1,alpha)
 
 const slider = document.getElementById("slider");
 const sliderOutput = document.getElementById("sliderOutput");
@@ -45,3 +55,6 @@ reset.addEventListener("mousedown", () => {
   const size = slider.value
   dynamicDiv(size)
 })
+
+
+//extra credit : shadin effect
