@@ -26,7 +26,7 @@ board.addEventListener("mouseover", (event) => {
 console.log(rgbaArray)
     let alpha = parseFloat(rgbaArray[3]);
   console.log(alpha)
-    alpha = Math.min(1, alpha + 0.1);
+    alpha = Math.min(1, alpha + 0.2);
     rgbaArray.splice(3,1,alpha);
  console.log(rgbaArray)
     target.style.backgroundColor = `rgba(${rgbaArray.join()})`;
@@ -57,4 +57,4 @@ reset.addEventListener("mousedown", () => {
 })
 
 
-//extra credit : shadin effect
+//extra credit : shading effect
